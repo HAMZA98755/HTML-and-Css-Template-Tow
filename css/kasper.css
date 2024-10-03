@@ -1,0 +1,927 @@
+/* Start Varibales */
+:root {
+    --main-color: #19c8fa;
+    --transperant-color: #0f748f70;
+    --section-padding: 100px;
+}
+/* End Varibales */
+/*Start Glonbal Roul */
+/* Start Componants */
+.special-heading {
+    text-align: center;
+}
+.special-heading h1 {
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+    color: #777;
+    position: relative;
+}
+.special-heading h1::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    width: 120px;
+    height: 2px;
+    background-color: #777;
+    transform: translateX(-50%);
+}
+.special-heading h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -43px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #777;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateX(-50%);
+}
+.special-heading p {
+    width: 550px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+}
+/* End Componants */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;   
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Larg */
+    
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/*End Glonbal Roul */
+/* Start Header */
+.header {
+    position: absolute; 
+    left: 0px;
+    width: 100%;
+    z-index: 2
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+}
+.header .container::after {
+    content: "";
+    bottom: 0px;
+    left: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    position: absolute;
+    background-color: #a2a2a2;
+}
+.header .container .logo img {
+    height: 40px;  
+}
+.header .container nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header .container nav .toggle-menu {
+    color: white;
+    font-size: 22px;
+}
+@media (min-width: 768px) {
+    .header .container nav .toggle-menu {
+        display: none;
+    }
+}
+
+.header .container nav ul {
+    display: flex;
+}
+@media (max-width: 767px) {
+    .header .container nav ul {
+        display: none;
+    }
+    .header .container i:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(0 0 0 / 50%)
+    }
+    .header .container nav  ul li a {
+        padding: 15px !important ;
+    }
+
+}
+.header .container nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 40px 10px;
+    position: relative;
+    z-index: 2;
+}
+.header .container nav ul li a.active,
+.header .container nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+.header nav .form {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 40px;
+    border-left: 1px solid white;
+}
+.header nav .form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    right: 0;
+}
+/* End Header */
+/* Start Landing */
+.landing {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+}
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: white;
+    width: 50%;
+    padding: 50px;
+    background-color: var(--transperant-color);
+    display: flex;
+    justify-content: space-around;
+}
+@media (max-width: 767px) {
+    .landing .text {
+        width: 100%;
+    }
+}
+.landing .text .content {
+    max-width: 500px;
+}
+@media (max-width: 767px) {
+    .landing .text .conten {
+        max-width: 100%;
+    }
+}
+.landing .text .content h2 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 1.6;
+}
+.landing .text .content p {
+    font-size: 14px;
+    line-height: 2;
+}
+.landing .change-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    font-size: 30px;
+}
+@media (max-width: 767px) {
+    .landing .change-background {
+        display: none;
+    }
+}
+.landing .fa-angle-right{
+    right: 30px;
+}
+.landing .fa-angle-left {
+    left: 30px;
+}
+.bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    display: flex;
+    bottom: 30px;
+}
+.bullets li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: transparent;
+}
+.bullets .active {
+    background-color: var(--main-color);
+}
+/* End Landing */
+/* Start Services */
+.services {
+    padding-top: var(--section-padding);
+}
+@media (min-width: 700px) {
+    .services .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        column-gap: 60px;
+        row-gap: 50px;
+    }
+}
+.services .container .srv-box {
+    display: flex;
+}
+.services .container .srv-box i {
+    margin-right: 50px;
+}
+@media (max-width: 767px) {
+    .services .container .srv-box {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .services .container .srv-box i {
+        margin: 0 0 30px;
+    }
+}
+.services .container .srv-box h3 {
+    font-size: 30px;
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+.services .container .srv-box p {
+    color: #777;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+/* End Services */
+/* Start Portofolil */
+.portofolio {
+    padding-top: var(--section-padding);
+}
+.portofolio .shuffle {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+.portofolio .shuffle li {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.portofolio .shuffle .active {
+    background-color: var(--main-color);
+}
+.portofolio .cont-imgs {
+    display: flex;
+    flex-wrap: wrap;
+}
+.portofolio .cont-imgs .box {
+   flex-basis: 100%;
+   position: relative;
+   overflow: hidden;
+}
+.portofolio .cont-imgs .box:hover .text {
+    bottom: 0px;
+}
+.portofolio .cont-imgs .box:hover .image {
+    transform: rotateY(3deg) scale(10px);
+}
+@media (min-width: 767px) {
+    .portofolio .cont-imgs .box {
+        flex-basis: 50%;
+     }
+}
+@media (min-width: 1199px) {
+    .portofolio .cont-imgs .box {
+        flex-basis: 25%;
+     }
+}
+
+.portofolio .cont-imgs .box .image {
+}
+.portofolio .cont-imgs .box .image img {
+    max-width: 100%;
+}
+.portofolio .cont-imgs .box .text {
+    background-color: white;
+    position: absolute;
+    bottom: -100%;
+    padding: 10px;
+    left: 0px;
+    width: 100%;
+    transition: 0.3s;
+}
+.portofolio .cont-imgs .box .text h3 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.portofolio .cont-imgs .box .text p {
+    color: var(--main-color) 
+}
+.portofolio .more {
+    display: block;
+    width: fit-content;
+    padding: 15px 20px;
+    margin: 30px auto;
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.video {
+    position: relative;
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);   
+}
+.video img {
+    width: 100%;
+}
+.video .awesome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--transperant-color);
+    width: 100%;
+    padding: 10px 10px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .video img {
+       display: none;
+    }
+    .video .awesome {
+        background-color: var(--main-color);
+    }
+}
+.video .awesome .text {
+    margin-bottom: 20px;
+    color: white;
+} 
+.video .awesome .text h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.video .awesome .more {
+    display: block;
+    width: fit-content;
+    padding: 10px 35px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.about {
+    padding-top: var(--section-padding);
+    margin-bottom: 50px;
+    height: 730px;
+    overflow: hidden;
+
+}
+.about .image {
+    height: 500px;
+    width: 200px;
+    margin: 0px auto;
+    border-radius: 25px;
+    overflow: hidden
+}
+.about .image img {
+    width: 100%;   
+}
+/* End Portofolil */
+/* Start Stst */
+.stat {
+    padding-top: var(--section-padding);
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    position: relative;
+}
+.stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%)
+}
+.stat .container {
+    text-align: center;
+    color: white;
+    background-color: var(--transperant-color);
+    position: relative;
+    bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.stat .container .box {
+    padding: 50px;
+}
+@media (max-width: 768px) {
+    .stat .container .box {
+        flex-basis: 100%;
+    }
+}
+@media (min-width: 768px) {
+    .stat .container .box {
+        flex-basis: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .stat .container .box {
+        flex-basis: 25%;
+    }
+}
+.stat .container i {
+    font-size: 20px;
+    background-color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+}
+.stat .stat-cont h1 {
+    font-size: 50px;
+}
+/* End Stst */
+/* Start Skils & Testemonails */
+.our-skills {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.our-skills .container {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 768px) {
+    .our-skills .container {
+        flex-direction: column;
+    }
+}
+.our-skills .container > div {
+    flex-basis: 45%;
+    position: relative;
+}
+.our-skills .container > div > h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: normal;
+    font-size: 30px
+}
+.our-skills .container > div > p {
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.8;
+    text-align: center;
+}
+.our-skills .container .test .person {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.our-skills .container .test .person img {
+    width: 100px;
+    border-radius: 50%;
+
+}
+.our-skills .container .test .person p {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--main-color);
+    color: #777;
+    line-height: 1.8;
+}
+.our-skills .container .test .bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    display: flex;
+    bottom: 0px;
+}
+@media (max-width: 768px) {
+    .our-skills .container .test .bullets {
+        display: none;
+    }
+}
+.our-skills .container .test .bullets li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: transparent;
+}
+.our-skills .container .test .bullets .active {
+    background-color: var(--main-color)
+}
+.our-skills .container .skills .skill {
+    padding: 20px 0;
+}
+.our-skills .container .skills .skill h4 {
+    font-weight: normal;
+}
+.our-skills .container .skills .skill .prog {
+    background-color: #ccc;
+    height: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+.our-skills .container .skills .skill span::before {
+    content: attr(data-progress);
+    display: block;
+    width: 30px;
+    height: 20px;
+    background-color: black;
+    top: -28px;
+    position: relative;
+    left: calc(100% - 15px);
+    border-radius: 4px;
+    color: white;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.our-skills .container .skills .skill span {
+    display: block;
+    background-color: var(--main-color);
+    height: 100%;
+}
+.our-skills .container .skills .skill span::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 1px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    position: relative;
+    bottom: 28px;
+    left: calc(100% - 7px);
+} 
+/* End Skils & Testemonails */
+/* Start Pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 20px;
+    row-gap: 40px;
+}
+.pricing .plans .plan {
+    text-align: center;
+    border-top: 1px solid var(--main-color);
+}
+.pricing .plans .plan .head {
+    border-bottom: 1px solid var(--main-color);
+    padding: 30px;
+}
+.pricing .plans .plan .head h4 {
+    font-weight: normal;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #1f2021;
+}
+.pricing .plans .plan .head h1 {
+    font-size: 50px;
+    color: #1f2021;
+    font-weight: 600;
+    position: relative;
+    right: -10px;
+}
+.pricing .plans .plan .head h1::before {
+    content: '$';
+    font-size: 22px;
+    position: relative;
+    bottom: 35px;
+    left: -5px;
+    color: #1f2021;
+    font-weight: 600;
+}
+.pricing .plans .plan .head h1::after {
+    content: '/MO';
+    font-size: 18px;
+    position: relative;
+    right: -5px;
+    color: #1f2021;
+    font-weight: 600;
+}
+.pricing .plans .plan .midial {
+    border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan .midial .features {
+    padding: 30px;
+}
+.pricing .plans .plan .midial .features h2 {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 30px;
+    color: #1f2021;
+    position: relative;
+}
+.pricing .plans .plan .midial .features h2:not(last-child)::after{
+    content: '';
+    color: #1f2021;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 150px;
+    background-color: var(--main-color);
+    height: 1px;
+}
+.pricing .plans .plan .foot a {
+    font-weight: normal;
+    font-size: 17px;
+    display: block;
+    padding: 15px 35px;
+    margin: 40px auto;
+    width: fit-content;
+    border: 2px solid var(--main-color);
+    color: #1f2021;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.pricing .conact {
+    text-align: center;
+    margin-top: 60px;
+}
+.pricing .conact p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #353235;
+    font-weight: 600;
+}
+.pricing .conact a {
+    font-weight: 600;
+    font-size: 17px;
+    display: block;
+    padding: 15px 35px;
+    margin: 0px auto;
+    width: fit-content;
+    /* border: 2px solid var(--main-color); */
+    color: white;
+    text-decoration: none;
+    background-color: var(--main-color);
+    border-radius: 6px;
+}
+/* End Pricing */
+/* Start Subscribe */
+.subscribe {
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    color: white;
+}
+.subscribe::before {
+    content: '0';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(0 0 0 / 50%);
+}
+.subscribe .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 991px) {
+    .subscribe .container {
+        flex-direction: column;
+    }
+}
+.subscribe form {
+    display: flex;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+}
+.subscribe form i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+.subscribe form input[type="email"] {
+    border: 1px solid white;
+    border-right: none;
+    padding: 20px 20px 20px 60px;
+    background: none;
+    caret-color: var(--main-color);
+    width: calc(100% - 130px);
+}
+.subscribe form input[type="submit"] {
+    width: 130px;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-left: none;
+    text-transform: uppercase;
+    color: white;
+}
+.subscribe form input[type="email"]:focus,
+.subscribe form input[type="submit"]:focus {
+    outline: none;
+} 
+.subscribe form ::placeholder {
+    color: white;
+}
+.subscribe p {
+    line-height: 2;
+    margin-left: 30px;
+}
+@media (max-width: 991px) {
+    .subscribe p{
+        margin: 30px 0 0;
+    }
+}
+/* End Subscribe */
+/* Start Conect */
+.conect {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.conect .container .content {
+    display: flex;
+    justify-content: space-between;
+}
+.conect .container .content form {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.conect .container .content form input[placeholder="Your Name"],
+.conect .container .content form input[placeholder="Your Mail"] {
+    padding: 20px 40px;
+    caret-color: var(--main-color);
+    background: none;
+}
+.conect .container .content form textarea {
+    height: 300px;
+    padding: 20px 40px;
+    caret-color: var(--main-color);
+}
+.conect .container .content form input[placeholder="Your Message"] ::placeholder {
+    position: relative;
+    top: 100%;
+}
+.conect .container .content form *:focus {
+    outline: none;
+}
+.conect .container .content form ::placeholder {
+    color: black;
+    text-transform: uppercase;
+}
+.conect .container .content .text {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.conect .container .content .text > div {
+    margin-bottom: 45px;
+}
+.conect .container .content .text > div > h3 {
+    size: 30px;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+.conect .container .content .text > div > p {
+    color: #777;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .conect .container .content .text > div > h3 {
+        font-size: 15px;
+    }
+    .conect .container .content .text > div > p {
+        font-size: 8px;
+    }
+}
+
+.conect .container a {
+    margin: 50px auto;
+    display: block;
+    width: 200px;
+    background-color: var(--main-color);
+    padding: 20px 40px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 8px;
+}
+/* End Conect */
+/* Start Footer  */
+.footer {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+    color: white;
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    position: relative;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(0 0 0 / 50%)
+}
+.footer img {
+    width: 300px;
+}
+.footer h2 {
+    margin: 30px auto;
+    padding: 40px;
+    font-size: 40px;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+    width: fit-content;
+}
+.footer i {
+    margin: 26px 75px 40px;
+}
+.footer span{
+    color: var(--main-color)
+}
+
+/* Start Footer  */
